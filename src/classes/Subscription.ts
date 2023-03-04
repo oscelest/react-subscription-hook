@@ -1,4 +1,6 @@
-export class Subscription<V extends NotFunction = NotFunction> {
+import {NotFunction, SubscriptionUpdateCallbackFn, Subscription} from "../index";
+
+export class SubscriptionInstance<V extends NotFunction = NotFunction> implements Subscription<V> {
   
   #value: V;
   readonly #subscription_list: SubscriptionUpdateCallbackFn<V>[];
@@ -8,7 +10,7 @@ export class Subscription<V extends NotFunction = NotFunction> {
     this.#subscription_list = [];
   }
   
-  public get value () {
+  public get value() {
     return this.#value;
   }
   

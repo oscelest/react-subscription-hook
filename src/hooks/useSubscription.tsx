@@ -1,8 +1,9 @@
 import {useEffect, useState} from "react";
-import {Subscription} from "../classes";
+import {SubscriptionInstance} from "../classes";
+import {NotFunction, PrevStateFn, Subscription, UpdateFn} from "../index";
 
 export function createSubscription<C extends NotFunction>(context: C): Subscription<C> {
-  return new Subscription<C>(context);
+  return new SubscriptionInstance<C>(context);
 }
 
 export function useSubscription<V extends NotFunction>(subscription: Subscription<V>): [V, UpdateFn<V>] {
