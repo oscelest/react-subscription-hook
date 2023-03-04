@@ -1,4 +1,4 @@
-# react-dialog
+# react-subscription-hook
 
 ## Introduction
 
