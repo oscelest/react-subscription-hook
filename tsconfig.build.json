@@ -3,8 +3,6 @@
     "allowJs":                          true,
     "allowSyntheticDefaultImports":     true,
     "baseUrl":                          ".",
-    "declaration":                      true,
-    "declarationDir":                   ".",
     "emitBOM":                          false,
     "esModuleInterop":                  true,
     "forceConsistentCasingInFileNames": true,

@@ -1,12 +1,12 @@
 import {useEffect, useState} from "react";
-import {Subscription} from "../classes/Subscription";
+import {Subscription} from "../classes";
 
 export function createSubscription<C extends NotFunction>(context: C): Subscription<C> {
   return new Subscription<C>(context);
 }
 
 export function useSubscription<V extends NotFunction>(subscription: Subscription<V>): [V, UpdateFn<V>] {
-  const [internal_value, setInternalValue] = useState<V>(subscription.getValue());
+  const [internal_value, setInternalValue] = useState<V>(subscription.value);
   
   useEffect(
     () => {
@@ -23,7 +23,7 @@ export function useSubscription<V extends NotFunction>(subscription: Subscriptio
   
   function setValue(value: V | PrevStateFn<V>) {
     value = typeof value === "function" ? value(internal_value) : value;
-    subscription.setValue(value);
+    subscription.value = value;
   }
   
   function onSubscriptionUpdate(value: V) {

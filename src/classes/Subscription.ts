@@ -8,16 +8,15 @@ export class Subscription<V extends NotFunction = NotFunction> {
     this.#subscription_list = [];
   }
   
-  public getValue(): V {
+  public get value () {
     return this.#value;
   }
   
-  public setValue(value: V) {
+  public set value(value: V) {
     this.#value = value;
     for (let fn of this.#subscription_list) {
       fn(this.#value);
     }
-    return value;
   }
   
   public subscribe(callback: SubscriptionUpdateCallbackFn<V>) {
