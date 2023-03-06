@@ -1,4 +1,4 @@
-import {NotFunction, SubscriptionUpdateCallbackFn, Subscription} from "../index";
+import {NotFunction, Subscription, SubscriptionUpdateCallbackFn} from "../index";
 
 export class SubscriptionInstance<V extends NotFunction = NotFunction> implements Subscription<V> {
   

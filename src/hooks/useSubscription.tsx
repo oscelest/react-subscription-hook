@@ -20,15 +20,15 @@ export function useSubscription<V extends NotFunction>(subscription: Subscriptio
     []
   );
   
-  return [internal_value, (setValue<V>).bind(subscription)];
-
+  return [internal_value, setValue];
+  
+  function setValue(value: V | PrevStateFn<V>) {
+    value = typeof value === "function" ? value(internal_value) : value;
+    subscription.value = value;
+  }
   
   function onSubscriptionUpdate(value: V) {
     setInternalValue(value);
   }
 }
 
-function setValue<V extends NotFunction>(this: Subscription<V>, value: V | PrevStateFn<V>) {
-  value = typeof value === "function" ? value(this.value) : value;
-  this.value = value;
-}

@@ -2,7 +2,7 @@ import React from "react";
 import {createSubscription, useSubscription} from "../src";
 import Style from "./index.module.css";
 
-const subscription = createSubscription<number>(0);
+export const subscription = createSubscription<number>(0);
 
 function IndexPage() {
   const [value, setValue] = useSubscription(subscription);
