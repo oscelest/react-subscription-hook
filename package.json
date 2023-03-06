@@ -1,7 +1,7 @@
 {
   "name": "@noxy/react-subscription-hook",
   "author": "oscelest",
-  "version": "0.2.7",
+  "version": "0.3.0",
   "description": "A react component hook to create subscribable values inside components in the style of context.",
   "license": "MIT",
   "repository": {
