@@ -28,7 +28,7 @@ export class SubscriptionInstance<V extends NotFunction = NotFunction> implement
   public unsubscribe(callback: SubscriptionUpdateCallbackFn<V>) {
     for (let i = this.#subscription_list.length; i >= 0; i--) {
       if (this.#subscription_list[i] !== callback) continue;
-      delete this.#subscription_list[i];
+      this.#subscription_list.splice(i, 1);
     }
   }
 }
