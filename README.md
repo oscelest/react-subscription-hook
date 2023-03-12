@@ -3,7 +3,7 @@
 ## Introduction
 
 `react-subscription-hook` is a [React](https://reactjs.org/) functional component hook which creates a subscription object that can be used with the useSubscription hook.
-This allows for data to be shared between components by using the same subscription object. 
+This allows for data to be shared between components by using the same subscription object.
 Each being updated as another has their state updated.
 
 ## Installation
