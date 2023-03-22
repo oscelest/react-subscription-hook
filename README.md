@@ -21,7 +21,7 @@ Typescript types are already available in the library so no need to get external
 The following is an example of how to use the component:
 
 ```typescript jsx
-import {useSubscription, createSubscription} from "@noxy/react-subscription-hook";
+import {createSubscription, useSubscription, trackSubscription} from "@noxy/react-subscription-hook";
 import React, {HTMLProps, useContext} from "react";
 
 const subscription = createSubscription<number>(0);
@@ -29,6 +29,8 @@ const subscription = createSubscription<number>(0);
 function TestComponent(props: HTMLProps<HTMLDivElement>) {
   const [value, setValue] = useSubscription(subscription);
   const [other] = useSubscription(subscription);
+  
+  trackSubscription(subscription, value => console.log(value));
   
   return (
     <>
@@ -60,3 +62,4 @@ function TestComponent(props: HTMLProps<HTMLDivElement>) {
 
 The `createSubscription` creates a `Subscription` object with an initial value that can be used with the useSubscription hook.
 `useSubscription` takes a `Subscription` object to return a tuple containing the current value and a value updating function.
+`trackSubscription` takes a `Subscription` object and a callback function. The callback is called whenever the underlying subscription value changes.
