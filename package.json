@@ -6,10 +6,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:oscelest/react-dialog.git"
+    "url": "git@github.com:oscelest/react-subscription-hook.git"
   },
   "bugs": {
-    "url": "https://github.com/oscelest/react-dialog/issues"
+    "url": "https://github.com/oscelest/react-subscription-hook/issues"
   },
   "publishConfig": {
     "access": "public"
